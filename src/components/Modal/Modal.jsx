@@ -23,7 +23,7 @@ export class Modal extends Component {
 
   render() {
     const { modalImg,tags, closeModal } = this.props;
-
+   
     return createPortal(<Overlay onClick={closeModal}>
         <ModalViewer>
           <ModalImg src={modalImg} alt={tags} />

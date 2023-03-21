@@ -1,5 +1,6 @@
 import { Component } from "react";
-import { GlobalStyle} from './GlobalStyles';
+import { GlobalStyle } from './GlobalStyles';
+import { StyledApp } from './App.styled';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { fetchImages } from 'helpers/ImagesFinderApi';
@@ -61,13 +62,13 @@ export class App extends Component {
     const { handleQuerySubmit, handleLoadMore } = this;
 
     return (
-      <>
+      <StyledApp>
         <Searchbar onSubmit={handleQuerySubmit} />
         {images && <ImageGallery images={images} />}
         {!!totalHits && <Button onLoadMore={handleLoadMore} />}
         {isLoading && <Loader />}
         <GlobalStyle />
-       </>
+       </StyledApp>
     );
   }
 }
